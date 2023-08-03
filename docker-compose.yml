@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  movies-api-with-go-chi-and-memory-store:
+    build:
+      context: ./movies-api-with-go-chi-and-memory-store
+      dockerfile: Dockerfile
+    container_name: movies-api-with-go-chi-and-memory-store
+    command: sleep infinity
+
+    ports:
+      - ${MOVIES_MEM_PORT}:${MOVIES_MEM_PORT}
+    volumes:
+      - ./movies-api-with-go-chi-and-memory-store:/usr/src/app
